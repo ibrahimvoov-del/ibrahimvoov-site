@@ -7,22 +7,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{
-  --dark:#111820;
-  --dark2:#0c1118;
-  --card:#161e28;
-  --gold:#c9a84c;
-  --gold2:#e8c97a;
-  --gold3:rgba(201,168,76,0.12);
-  --silver:#8fa3b8;
-  --white:#ffffff;
-}
+:root{--dark:#111820;--dark2:#0c1118;--card:#161e28;--gold:#c9a84c;--gold2:#e8c97a;--gold3:rgba(201,168,76,0.12);--silver:#8fa3b8;--white:#ffffff}
 html{scroll-behavior:smooth}
 body{font-family:Tajawal,sans-serif;background:var(--dark2);color:var(--white);direction:rtl;overflow-x:hidden}
-::-webkit-scrollbar{width:4px}
-::-webkit-scrollbar-track{background:var(--dark2)}
-::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-track{background:var(--dark2)}::-webkit-scrollbar-thumb{background:var(--gold);border-radius:2px}
 
+/* NAV */
 nav{display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(12,17,24,0.97);border-bottom:1px solid rgba(201,168,76,0.15);position:sticky;top:0;z-index:200;backdrop-filter:blur(16px)}
 .nav-logo{display:flex;align-items:center;gap:10px}
 .nav-logo img{width:36px;height:36px;border-radius:7px;object-fit:contain;background:#fff;padding:2px}
@@ -34,6 +24,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 2
 .nav-cta{background:var(--gold);color:var(--dark2);border:none;padding:8px 18px;border-radius:8px;font-size:13px;font-weight:800;font-family:Tajawal,sans-serif;cursor:pointer;white-space:nowrap}
 @media(max-width:768px){.nav-links{display:none}nav{padding:12px 16px}}
 
+/* HERO */
 .hero{min-height:100svh;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .hero-photo-wrap{position:relative;width:100%;height:55vw;max-height:420px;min-height:280px;overflow:hidden;flex-shrink:0}
 .hero-photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;filter:grayscale(15%) contrast(1.05)}
@@ -49,7 +40,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 2
 .hero-sub{font-size:14px;color:var(--silver);font-weight:600;margin-bottom:14px;letter-spacing:1px}
 .hero p{font-size:15px;color:#7a8fa5;line-height:1.85;margin-bottom:24px}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap}
-.btn-primary{background:var(--gold);color:var(--dark2);border:none;padding:12px 24px;border-radius:10px;font-size:15px;font-weight:800;font-family:Tajawal,sans-serif;cursor:pointer;transition:all .2s}
+.btn-primary{background:var(--gold);color:var(--dark2);border:none;padding:12px 24px;border-radius:10px;font-size:15px;font-weight:800;font-family:Tajawal,sans-serif;cursor:pointer}
 .btn-secondary{background:transparent;color:var(--white);border:1.5px solid rgba(255,255,255,0.15);padding:12px 24px;border-radius:10px;font-size:15px;font-weight:500;font-family:Tajawal,sans-serif;cursor:pointer;transition:all .2s}
 .btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
 @media(min-width:900px){
@@ -60,6 +51,7 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:14px 2
   .hero h1{font-size:52px}
 }
 
+/* SECTIONS */
 section{padding:60px 20px}
 @media(min-width:768px){section{padding:80px 48px}}
 .section-label{font-size:11px;font-weight:800;color:var(--gold);letter-spacing:4px;text-transform:uppercase;margin-bottom:10px}
@@ -72,38 +64,29 @@ section{padding:60px 20px}
 .videos-grid{display:grid;grid-template-columns:1fr;gap:20px;margin-top:32px}
 @media(min-width:600px){.videos-grid{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:900px){.videos-grid{grid-template-columns:repeat(3,1fr)}}
-
 .video-card{background:var(--card);border:1px solid rgba(201,168,76,0.15);border-radius:16px;overflow:hidden;transition:all .3s}
 .video-card:hover{border-color:rgba(201,168,76,0.4);transform:translateY(-3px)}
-.video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:var(--dark2);overflow:hidden}
+.video-wrap{position:relative;width:100%;aspect-ratio:16/9;background:#000;overflow:hidden}
 .video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-
-/* Custom video controls */
-.video-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.35);transition:opacity .3s;cursor:pointer}
+.video-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.4);transition:opacity .3s;cursor:pointer}
 .video-overlay.hidden{opacity:0;pointer-events:none}
-.play-circle{width:56px;height:56px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
+.play-circle{width:60px;height:60px;border-radius:50%;background:rgba(201,168,76,0.9);display:flex;align-items:center;justify-content:center;transition:transform .2s,background .2s}
 .play-circle:hover{background:var(--gold);transform:scale(1.1)}
-.play-circle svg{width:20px;height:20px;fill:var(--dark2);margin-right:-3px}
-
-.video-controls{position:absolute;bottom:0;left:0;right:0;padding:10px 12px;background:linear-gradient(to top,rgba(0,0,0,0.8),transparent);display:flex;align-items:center;gap:10px;opacity:0;transition:opacity .3s}
-.video-card:hover .video-controls{opacity:1}
-.ctrl-btn{background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;color:var(--white)}
-.ctrl-btn svg{width:16px;height:16px;fill:var(--white)}
-.progress-wrap{flex:1;height:3px;background:rgba(255,255,255,0.2);border-radius:2px;cursor:pointer;position:relative}
-.progress-bar{height:100%;background:var(--gold);border-radius:2px;width:0%;transition:width .1s linear}
-.time-label{font-size:11px;color:var(--silver);white-space:nowrap;min-width:36px}
-.vol-btn svg{width:14px;height:14px}
-
+.play-circle svg{width:22px;height:22px;fill:var(--dark2);margin-right:-3px}
+.video-controls{position:absolute;bottom:0;left:0;right:0;padding:8px 10px;background:linear-gradient(to top,rgba(0,0,0,0.85),transparent);display:flex;align-items:center;gap:8px;opacity:0;transition:opacity .3s}
+.video-card:hover .video-controls,.video-wrap:focus-within .video-controls{opacity:1}
+.ctrl-btn{background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;color:var(--white);border-radius:4px;transition:background .15s}
+.ctrl-btn:hover{background:rgba(255,255,255,0.15)}
+.fullscreen-btn{margin-right:auto}
+.progress-wrap{flex:1;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;cursor:pointer;position:relative}
+.progress-wrap:hover{height:6px}
+.progress-bar{height:100%;background:var(--gold);border-radius:2px;width:0%;pointer-events:none}
+.time-label{font-size:11px;color:rgba(255,255,255,0.8);white-space:nowrap;min-width:36px;font-family:monospace}
 .video-info{padding:14px 16px}
 .video-title{font-size:14px;font-weight:800;margin-bottom:4px}
 .video-tag{font-size:11px;color:var(--gold);font-weight:700}
 
-/* Placeholder card */
-.video-placeholder-card{background:var(--card);border:1.5px dashed rgba(201,168,76,0.2);border-radius:16px;aspect-ratio:16/9;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--silver)}
-.video-placeholder-card svg{width:36px;height:36px;opacity:0.25}
-.video-placeholder-card span{font-size:13px;opacity:0.5}
-
-/* SERVICES */
+/* SERVICES + AUDIO */
 .services-section{background:var(--dark2)}
 .services-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:36px}
 @media(min-width:600px){.services-grid{grid-template-columns:repeat(2,1fr)}}
@@ -127,13 +110,15 @@ section{padding:60px 20px}
 .ab{width:3px;background:var(--gold);border-radius:2px;opacity:0.4}
 .ab.playing{animation:ab-wave 0.7s ease-in-out infinite alternate;opacity:0.9}
 @keyframes ab-wave{from{transform:scaleY(0.3)}to{transform:scaleY(1)}}
-.audio-placeholder-note{font-size:11px;color:var(--silver);opacity:0.55;text-align:center;padding:8px;border:1px dashed rgba(201,168,76,0.15);border-radius:8px;line-height:1.6;margin-top:8px}
+.audio-placeholder-note{font-size:11px;color:var(--silver);opacity:0.5;text-align:center;padding:8px;border:1px dashed rgba(201,168,76,0.15);border-radius:8px;line-height:1.6;margin-top:8px}
 
+/* CLIENTS */
 .clients-section{background:var(--dark);text-align:center}
 .clients-logos{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:32px}
 .client-badge{background:var(--card);border:1px solid rgba(201,168,76,0.15);border-radius:50px;padding:10px 20px;font-size:13px;font-weight:700;color:var(--silver);transition:all .2s}
 .client-badge:hover{border-color:var(--gold);color:var(--gold)}
 
+/* PRICING */
 .pricing-section{background:var(--dark2)}
 .pricing-note{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,0.08);border:1px solid rgba(201,168,76,0.2);padding:7px 16px;border-radius:50px;font-size:13px;color:var(--gold2);margin-top:14px;margin-bottom:36px}
 .pricing-grid{display:grid;grid-template-columns:1fr;gap:16px}
@@ -160,6 +145,7 @@ section{padding:60px 20px}
 .price-btn.solid{background:var(--gold);color:var(--dark2)}
 .price-btn.solid:hover{background:var(--gold2)}
 
+/* ONE TIME */
 .onetime-section{background:var(--dark)}
 .onetime-card{background:var(--card);border:1px solid rgba(201,168,76,0.2);border-radius:18px;padding:32px 24px;margin-top:32px}
 .onetime-price{font-size:58px;font-weight:900;color:var(--gold);line-height:1}
@@ -169,14 +155,8 @@ section{padding:60px 20px}
 .onetime-features li{display:flex;align-items:center;gap:8px;padding:9px 0;font-size:14px;color:var(--silver);border-bottom:1px solid rgba(255,255,255,0.05)}
 .onetime-features li:last-child{border:none}
 
-.payment-section{background:var(--dark2);text-align:center}
-.payment-methods{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:32px}
-.pay-card{background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:12px;padding:16px 20px;display:flex;flex-direction:column;align-items:center;gap:6px;min-width:90px;transition:all .2s}
-.pay-card:hover{border-color:var(--gold)}
-.pay-icon{font-size:24px}
-.pay-name{font-size:12px;color:var(--silver);font-weight:600}
-
-.contact-section{background:var(--dark);text-align:center}
+/* CONTACT */
+.contact-section{background:var(--dark2);text-align:center}
 .contact-card{background:linear-gradient(135deg,rgba(201,168,76,0.05),rgba(22,30,40,0.8));border:1px solid rgba(201,168,76,0.2);border-radius:20px;padding:40px 24px;margin:36px auto 0;max-width:600px}
 .contact-card h3{font-size:24px;font-weight:900;margin-bottom:10px}
 .contact-card p{color:var(--silver);font-size:15px;margin-bottom:28px;line-height:1.8}
@@ -234,12 +214,11 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
 <section class="portfolio-section" id="portfolio">
   <div class="section-label">الأعمال الإعلانية</div>
   <div class="section-title">نماذج من أعمالي</div>
-  <div class="section-sub">شاهد نماذج من أعمالي الإعلانية بجودة عالية</div>
+  <div class="section-sub">شاهد نماذج من أعمالي الإعلانية — اضغط ⛶ لتكبير الفيديو</div>
   <div class="videos-grid">
 
-    <!-- KUDU VIDEO -->
     <div class="video-card">
-      <div class="video-wrap">
+      <div class="video-wrap" id="wrap1">
         <video id="v1" preload="metadata" playsinline>
           <source src="https://pub-44f1a8d4160b4f46b147447d923b2a57.r2.dev/KUDU.mp4" type="video/mp4">
         </video>
@@ -249,15 +228,21 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
           </div>
         </div>
         <div class="video-controls">
-          <button class="ctrl-btn" onclick="togglePlay2('v1','ov1')" id="pb1">
-            <svg viewBox="0 0 20 20"><polygon points="4,2 18,10 4,18"/></svg>
+          <button class="ctrl-btn" onclick="togglePlay2('v1','ov1')">
+            <svg viewBox="0 0 20 20" id="pbi1"><polygon points="4,2 18,10 4,18"/></svg>
           </button>
           <div class="progress-wrap" onclick="seekVideo(event,'v1')">
             <div class="progress-bar" id="pr1"></div>
           </div>
           <span class="time-label" id="tl1">0:00</span>
-          <button class="ctrl-btn vol-btn" onclick="toggleMute('v1')">
-            <svg viewBox="0 0 20 20"><path d="M3 7h3l4-4v14l-4-4H3z"/><path d="M14 7c1.5 1 1.5 5 0 6M16 5c3 2 3 8 0 10"/></svg>
+          <button class="ctrl-btn" onclick="toggleMute('v1')" title="كتم">
+            <svg viewBox="0 0 20 20" width="15" height="15"><path d="M3 7h3l4-4v14l-4-4H3z" fill="white"/><path d="M14 7c1.5 1 1.5 5 0 6" stroke="white" stroke-width="1.5" fill="none"/><path d="M16 5c3 2 3 8 0 10" stroke="white" stroke-width="1.5" fill="none"/></svg>
+          </button>
+          <button class="ctrl-btn fullscreen-btn" onclick="goFullscreen('v1')" title="تكبير">
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="white" stroke-width="1.8">
+              <polyline points="1,6 1,1 6,1"/><polyline points="14,1 19,1 19,6"/>
+              <polyline points="1,14 1,19 6,19"/><polyline points="14,19 19,19 19,14"/>
+            </svg>
           </button>
         </div>
       </div>
@@ -267,30 +252,75 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
       </div>
     </div>
 
-    <!-- PLACEHOLDER 2 -->
-    <div>
-      <div class="video-placeholder-card">
-        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#c9a84c" stroke-width="1.5"/><polygon points="16,13 30,20 16,27" fill="#c9a84c" opacity="0.4"/></svg>
-        <span>قريباً — فيديو ٢</span>
+    <div class="video-card">
+      <div class="video-wrap" id="wrap2">
+        <video id="v2" preload="metadata" playsinline>
+          <source src="https://pub-44f1a8d4160b4f46b147447d923b2a57.r2.dev/RED.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" id="ov2" onclick="playVideo('v2','ov2')">
+          <div class="play-circle">
+            <svg viewBox="0 0 20 20"><polygon points="4,2 18,10 4,18"/></svg>
+          </div>
+        </div>
+        <div class="video-controls">
+          <button class="ctrl-btn" onclick="togglePlay2('v2','ov2')">
+            <svg viewBox="0 0 20 20" id="pbi2"><polygon points="4,2 18,10 4,18"/></svg>
+          </button>
+          <div class="progress-wrap" onclick="seekVideo(event,'v2')">
+            <div class="progress-bar" id="pr2"></div>
+          </div>
+          <span class="time-label" id="tl2">0:00</span>
+          <button class="ctrl-btn" onclick="toggleMute('v2')" title="كتم">
+            <svg viewBox="0 0 20 20" width="15" height="15"><path d="M3 7h3l4-4v14l-4-4H3z" fill="white"/><path d="M14 7c1.5 1 1.5 5 0 6" stroke="white" stroke-width="1.5" fill="none"/><path d="M16 5c3 2 3 8 0 10" stroke="white" stroke-width="1.5" fill="none"/></svg>
+          </button>
+          <button class="ctrl-btn fullscreen-btn" onclick="goFullscreen('v2')" title="تكبير">
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="white" stroke-width="1.8">
+              <polyline points="1,6 1,1 6,1"/><polyline points="14,1 19,1 19,6"/>
+              <polyline points="1,14 1,19 6,19"/><polyline points="14,19 19,19 19,14"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="video-info" style="padding:14px 4px">
-        <div class="video-title">منصة قدراتك</div>
+      <div class="video-info">
+        <div class="video-title">إعلان — البحر الأحمر</div>
         <div class="video-tag">🎬 وثائقي ترويجي</div>
       </div>
     </div>
 
-    <!-- PLACEHOLDER 3 -->
-    <div>
-      <div class="video-placeholder-card">
-        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#c9a84c" stroke-width="1.5"/><polygon points="16,13 30,20 16,27" fill="#c9a84c" opacity="0.4"/></svg>
-        <span>قريباً — فيديو ٣</span>
+    <div class="video-card">
+      <div class="video-wrap" id="wrap3">
+        <video id="v3" preload="metadata" playsinline>
+          <source src="https://pub-44f1a8d4160b4f46b147447d923b2a57.r2.dev/QODRATK.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay" id="ov3" onclick="playVideo('v3','ov3')">
+          <div class="play-circle">
+            <svg viewBox="0 0 20 20"><polygon points="4,2 18,10 4,18"/></svg>
+          </div>
+        </div>
+        <div class="video-controls">
+          <button class="ctrl-btn" onclick="togglePlay2('v3','ov3')">
+            <svg viewBox="0 0 20 20" id="pbi3"><polygon points="4,2 18,10 4,18"/></svg>
+          </button>
+          <div class="progress-wrap" onclick="seekVideo(event,'v3')">
+            <div class="progress-bar" id="pr3"></div>
+          </div>
+          <span class="time-label" id="tl3">0:00</span>
+          <button class="ctrl-btn" onclick="toggleMute('v3')" title="كتم">
+            <svg viewBox="0 0 20 20" width="15" height="15"><path d="M3 7h3l4-4v14l-4-4H3z" fill="white"/><path d="M14 7c1.5 1 1.5 5 0 6" stroke="white" stroke-width="1.5" fill="none"/><path d="M16 5c3 2 3 8 0 10" stroke="white" stroke-width="1.5" fill="none"/></svg>
+          </button>
+          <button class="ctrl-btn fullscreen-btn" onclick="goFullscreen('v3')" title="تكبير">
+            <svg viewBox="0 0 20 20" width="15" height="15" fill="none" stroke="white" stroke-width="1.8">
+              <polyline points="1,6 1,1 6,1"/><polyline points="14,1 19,1 19,6"/>
+              <polyline points="1,14 1,19 6,19"/><polyline points="14,19 19,19 19,14"/>
+            </svg>
+          </button>
+        </div>
       </div>
-      <div class="video-info" style="padding:14px 4px">
-        <div class="video-title">شركة بلت</div>
+      <div class="video-info">
+        <div class="video-title">إعلان — منصة قدراتك</div>
         <div class="video-tag">🏛️ رسمي ومؤسسي</div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -305,66 +335,66 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
       <p>صوت يُباع — إعلانات تجارية تترك أثراً حقيقياً وتحقق الهدف التسويقي.</p>
       <span class="service-tag">الأكثر طلباً</span>
       <div class="audio-sample" id="as1"><audio id="a1" src="samples/ads.mp3"></audio>
-        <button class="play-btn" onclick="togglePlay('a1','as1')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
+        <button class="play-btn" onclick="toggleAudio('a1','as1')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
         <div class="audio-label"><strong>عينة إعلانية</strong><p>اضغط للاستماع</p></div>
         <div class="audio-bars" id="bars1"><div class="ab" style="height:6px"></div><div class="ab" style="height:12px"></div><div class="ab" style="height:8px"></div><div class="ab" style="height:16px"></div><div class="ab" style="height:10px"></div><div class="ab" style="height:6px"></div><div class="ab" style="height:14px"></div></div>
       </div>
-      <p class="audio-placeholder-note">* ارفع <code>samples/ads.mp3</code> على GitHub</p>
+      <p class="audio-placeholder-note">* ارفع samples/ads.mp3 على GitHub</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🎬</span><h3>الوثائقي</h3>
       <p>صوت يروي القصة — تعليق رصين يمنح المحتوى مصداقية واحترافية.</p>
       <span class="service-tag">وثائقي ومعلوماتي</span>
       <div class="audio-sample" id="as2"><audio id="a2" src="samples/doc.mp3"></audio>
-        <button class="play-btn" onclick="togglePlay('a2','as2')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
+        <button class="play-btn" onclick="toggleAudio('a2','as2')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
         <div class="audio-label"><strong>عينة وثائقية</strong><p>اضغط للاستماع</p></div>
         <div class="audio-bars" id="bars2"><div class="ab" style="height:10px"></div><div class="ab" style="height:6px"></div><div class="ab" style="height:14px"></div><div class="ab" style="height:8px"></div><div class="ab" style="height:16px"></div><div class="ab" style="height:10px"></div><div class="ab" style="height:6px"></div></div>
       </div>
-      <p class="audio-placeholder-note">* ارفع <code>samples/doc.mp3</code> على GitHub</p>
+      <p class="audio-placeholder-note">* ارفع samples/doc.mp3 على GitHub</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🏛️</span><h3>الرسمي والمؤسسي</h3>
       <p>مناسبات رسمية وعروض تقديمية بأعلى درجات الاحترافية.</p>
       <span class="service-tag">مؤسسي وحكومي</span>
       <div class="audio-sample" id="as3"><audio id="a3" src="samples/formal.mp3"></audio>
-        <button class="play-btn" onclick="togglePlay('a3','as3')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
+        <button class="play-btn" onclick="toggleAudio('a3','as3')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
         <div class="audio-label"><strong>عينة رسمية</strong><p>اضغط للاستماع</p></div>
         <div class="audio-bars" id="bars3"><div class="ab" style="height:8px"></div><div class="ab" style="height:14px"></div><div class="ab" style="height:6px"></div><div class="ab" style="height:12px"></div><div class="ab" style="height:16px"></div><div class="ab" style="height:8px"></div><div class="ab" style="height:10px"></div></div>
       </div>
-      <p class="audio-placeholder-note">* ارفع <code>samples/formal.mp3</code> على GitHub</p>
+      <p class="audio-placeholder-note">* ارفع samples/formal.mp3 على GitHub</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🗣️</span><h3>اللهجة السعودية البيضاء</h3>
       <p>متخصص في اللهجة السعودية البيضاء الأصيلة — الأكثر طلباً في السوق.</p>
       <span class="service-tag">لهجة سعودية</span>
       <div class="audio-sample" id="as4"><audio id="a4" src="samples/saudi.mp3"></audio>
-        <button class="play-btn" onclick="togglePlay('a4','as4')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
+        <button class="play-btn" onclick="toggleAudio('a4','as4')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
         <div class="audio-label"><strong>عينة سعودية</strong><p>اضغط للاستماع</p></div>
         <div class="audio-bars" id="bars4"><div class="ab" style="height:12px"></div><div class="ab" style="height:8px"></div><div class="ab" style="height:16px"></div><div class="ab" style="height:6px"></div><div class="ab" style="height:10px"></div><div class="ab" style="height:14px"></div><div class="ab" style="height:8px"></div></div>
       </div>
-      <p class="audio-placeholder-note">* ارفع <code>samples/saudi.mp3</code> على GitHub</p>
+      <p class="audio-placeholder-note">* ارفع samples/saudi.mp3 على GitHub</p>
     </div>
     <div class="service-card">
       <span class="service-icon">🎵</span><h3>البرومو والترويجي</h3>
       <p>مقاطع برومو جاذبة تشعل الاهتمام وتحفز الجمهور على التفاعل.</p>
       <span class="service-tag">سوشيال ميديا</span>
       <div class="audio-sample" id="as5"><audio id="a5" src="samples/promo.mp3"></audio>
-        <button class="play-btn" onclick="togglePlay('a5','as5')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
+        <button class="play-btn" onclick="toggleAudio('a5','as5')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
         <div class="audio-label"><strong>عينة برومو</strong><p>اضغط للاستماع</p></div>
         <div class="audio-bars" id="bars5"><div class="ab" style="height:16px"></div><div class="ab" style="height:10px"></div><div class="ab" style="height:6px"></div><div class="ab" style="height:14px"></div><div class="ab" style="height:8px"></div><div class="ab" style="height:12px"></div><div class="ab" style="height:16px"></div></div>
       </div>
-      <p class="audio-placeholder-note">* ارفع <code>samples/promo.mp3</code> على GitHub</p>
+      <p class="audio-placeholder-note">* ارفع samples/promo.mp3 على GitHub</p>
     </div>
     <div class="service-card">
       <span class="service-icon">📖</span><h3>الحكي القصصي</h3>
       <p>سرد قصصي آسر — محتوى رقمي ومسلسلات وأعمال درامية وحكائية.</p>
       <span class="service-tag">درامي وحكائي</span>
       <div class="audio-sample" id="as6"><audio id="a6" src="samples/story.mp3"></audio>
-        <button class="play-btn" onclick="togglePlay('a6','as6')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
+        <button class="play-btn" onclick="toggleAudio('a6','as6')"><svg viewBox="0 0 12 14"><polygon points="0,0 12,7 0,14"/></svg></button>
         <div class="audio-label"><strong>عينة قصصية</strong><p>اضغط للاستماع</p></div>
         <div class="audio-bars" id="bars6"><div class="ab" style="height:10px"></div><div class="ab" style="height:16px"></div><div class="ab" style="height:8px"></div><div class="ab" style="height:12px"></div><div class="ab" style="height:6px"></div><div class="ab" style="height:14px"></div><div class="ab" style="height:10px"></div></div>
       </div>
-      <p class="audio-placeholder-note">* ارفع <code>samples/story.mp3</code> على GitHub</p>
+      <p class="audio-placeholder-note">* ارفع samples/story.mp3 على GitHub</p>
     </div>
   </div>
 </section>
@@ -401,7 +431,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
         <li><div class="warn-ico">!</div>50 ريال لكل تعديل إضافي</li>
         <li><div class="check-ico"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,3" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>تسليم خلال 48 ساعة</li>
       </ul>
-      <button class="price-btn outline" onclick="contactWhatsapp('الباقة الفضية')">اشترك الآن</button>
+      <button class="price-btn outline" onclick="cw('الباقة الفضية')">اشترك الآن</button>
     </div>
     <div class="price-card featured">
       <div class="popular-badge">الأكثر طلباً ⭐</div>
@@ -417,7 +447,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
         <li><div class="check-ico"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,3" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>أولوية في التسليم 24 ساعة</li>
         <li><div class="check-ico"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,3" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>استشارة مجانية</li>
       </ul>
-      <button class="price-btn solid" onclick="contactWhatsapp('الباقة الذهبية')">اشترك الآن</button>
+      <button class="price-btn solid" onclick="cw('الباقة الذهبية')">اشترك الآن</button>
     </div>
     <div class="price-card" style="border-color:rgba(185,215,255,0.2)">
       <div class="price-icon">💎</div><div class="price-tier" style="color:#a8d4ff">DIAMOND</div>
@@ -431,7 +461,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
         <li><div class="check-ico"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,3" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>أولوية قصوى + دعم 24/7</li>
         <li><div class="check-ico"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,3" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>عقد شراكة مؤسسية</li>
       </ul>
-      <button class="price-btn outline" style="border-color:#a8d4ff;color:#a8d4ff" onclick="contactWhatsapp('الباقة الألماسية')">تواصل للتفاصيل</button>
+      <button class="price-btn outline" style="border-color:#a8d4ff;color:#a8d4ff" onclick="cw('الباقة الألماسية')">تواصل للتفاصيل</button>
     </div>
   </div>
 </section>
@@ -449,21 +479,7 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
       <li><div class="check-ico"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,3" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>ملفات WAV + MP3 عالية الجودة</li>
       <li><div class="check-ico"><svg viewBox="0 0 10 10"><polyline points="2,5 4.5,7.5 8,3" stroke="#c9a84c" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>لا التزام ولا اشتراك</li>
     </ul>
-    <button class="price-btn solid" style="border-radius:10px" onclick="contactWhatsapp('مشروع لمرة واحدة')">ابدأ مشروعك</button>
-  </div>
-</section>
-
-<!-- PAYMENT -->
-<section class="payment-section" id="payment">
-  <div class="section-label" style="display:flex;justify-content:center">طرق الدفع</div>
-  <div class="section-title">دفع آمن وسهل</div>
-  <div class="payment-methods">
-    <div class="pay-card"><div class="pay-icon">💳</div><div class="pay-name">مدى</div></div>
-    <div class="pay-card"><div class="pay-icon">🍎</div><div class="pay-name">Apple Pay</div></div>
-    <div class="pay-card"><div class="pay-icon">🏦</div><div class="pay-name">تحويل بنكي</div></div>
-    <div class="pay-card"><div class="pay-icon">📱</div><div class="pay-name">STC Pay</div></div>
-    <div class="pay-card"><div class="pay-icon">💰</div><div class="pay-name">PayPal</div></div>
-    <div class="pay-card"><div class="pay-icon">🟢</div><div class="pay-name">تابي</div></div>
+    <button class="price-btn solid" style="border-radius:10px" onclick="cw('مشروع لمرة واحدة')">ابدأ مشروعك</button>
   </div>
 </section>
 
@@ -496,76 +512,98 @@ footer{background:var(--dark2);border-top:1px solid rgba(255,255,255,0.04);paddi
 </footer>
 
 <script>
-// Video player
+// ---- VIDEO PLAYER ----
 function playVideo(vid, ovid) {
+  pauseAllVideos(vid);
   var v = document.getElementById(vid);
-  var ov = document.getElementById(ovid);
   v.play();
-  ov.classList.add('hidden');
-  v.addEventListener('pause', function(){ ov.classList.remove('hidden'); });
-  v.addEventListener('ended', function(){ ov.classList.remove('hidden'); });
-  startProgress(vid);
+  document.getElementById(ovid).classList.add('hidden');
+  v.onpause = function(){ document.getElementById(ovid).classList.remove('hidden'); updateBtn(vid, false); };
+  v.onended = function(){ document.getElementById(ovid).classList.remove('hidden'); updateBtn(vid, false); };
+  updateBtn(vid, true);
+  trackProgress(vid);
 }
 function togglePlay2(vid, ovid) {
   var v = document.getElementById(vid);
-  if (v.paused) { v.play(); document.getElementById(ovid).classList.add('hidden'); startProgress(vid); }
+  if (v.paused) { playVideo(vid, ovid); }
   else { v.pause(); }
 }
-function startProgress(vid) {
-  var v = document.getElementById(vid);
-  var num = vid.replace('v','');
-  var pr = document.getElementById('pr'+num);
-  var tl = document.getElementById('tl'+num);
-  if (!pr) return;
-  v.addEventListener('timeupdate', function(){
-    if (v.duration) {
-      pr.style.width = (v.currentTime/v.duration*100)+'%';
-      var m = Math.floor(v.currentTime/60);
-      var s = Math.floor(v.currentTime%60);
-      tl.textContent = m+':'+(s<10?'0':'')+s;
+function pauseAllVideos(exceptId) {
+  ['v1','v2','v3'].forEach(function(id){
+    if (id !== exceptId) {
+      var el = document.getElementById(id);
+      if (el) { el.pause(); updateBtn(id, false); }
     }
   });
 }
+function updateBtn(vid, playing) {
+  var n = vid.replace('v','');
+  var el = document.getElementById('pbi'+n);
+  if (!el) return;
+  el.innerHTML = playing
+    ? '<rect x="3" y="2" width="4" height="16" fill="white"/><rect x="13" y="2" width="4" height="16" fill="white"/>'
+    : '<polygon points="4,2 18,10 4,18" fill="white"/>';
+}
+function trackProgress(vid) {
+  var v = document.getElementById(vid);
+  var n = vid.replace('v','');
+  var pr = document.getElementById('pr'+n);
+  var tl = document.getElementById('tl'+n);
+  v.ontimeupdate = function(){
+    if (v.duration) {
+      pr.style.width = (v.currentTime / v.duration * 100) + '%';
+      var m = Math.floor(v.currentTime/60);
+      var s = Math.floor(v.currentTime%60);
+      tl.textContent = m + ':' + (s<10?'0':'') + s;
+    }
+  };
+}
 function seekVideo(e, vid) {
   var v = document.getElementById(vid);
-  var rect = e.currentTarget.getBoundingClientRect();
-  var pct = (e.clientX - rect.left) / rect.width;
-  v.currentTime = pct * v.duration;
+  if (!v.duration) return;
+  var r = e.currentTarget.getBoundingClientRect();
+  v.currentTime = ((e.clientX - r.left) / r.width) * v.duration;
 }
 function toggleMute(vid) {
   var v = document.getElementById(vid);
   v.muted = !v.muted;
 }
+function goFullscreen(vid) {
+  var v = document.getElementById(vid);
+  if (v.requestFullscreen) v.requestFullscreen();
+  else if (v.webkitRequestFullscreen) v.webkitRequestFullscreen();
+  else if (v.webkitEnterFullscreen) v.webkitEnterFullscreen();
+}
 
-// Audio player
-var currentAudio = null, currentBars = null;
-function togglePlay(audioId, sampleId) {
+// ---- AUDIO PLAYER ----
+var curAudio = null, curBars = null;
+function toggleAudio(audioId, sampleId) {
   var audio = document.getElementById(audioId);
-  var bars = document.getElementById(sampleId).querySelectorAll('.ab');
-  var btn = document.getElementById(sampleId).querySelector('.play-btn svg');
-  if (currentAudio && currentAudio !== audio) {
-    currentAudio.pause(); currentAudio.currentTime = 0;
-    if (currentBars) currentBars.forEach(function(b){ b.classList.remove('playing'); });
+  var bars  = document.getElementById(sampleId).querySelectorAll('.ab');
+  var btn   = document.getElementById(sampleId).querySelector('.play-btn svg');
+  if (curAudio && curAudio !== audio) {
+    curAudio.pause(); curAudio.currentTime = 0;
+    if (curBars) curBars.forEach(function(b){ b.classList.remove('playing'); });
   }
   if (audio.paused) {
     audio.play().catch(function(){});
     bars.forEach(function(b){ b.classList.add('playing'); });
     btn.innerHTML = '<rect x="1" y="0" width="4" height="14"/><rect x="7" y="0" width="4" height="14"/>';
-    currentAudio = audio; currentBars = bars;
+    curAudio = audio; curBars = bars;
   } else {
     audio.pause();
     bars.forEach(function(b){ b.classList.remove('playing'); });
     btn.innerHTML = '<polygon points="0,0 12,7 0,14"/>';
-    currentAudio = null; currentBars = null;
+    curAudio = null; curBars = null;
   }
-  audio.onended = function() {
+  audio.onended = function(){
     bars.forEach(function(b){ b.classList.remove('playing'); });
     btn.innerHTML = '<polygon points="0,0 12,7 0,14"/>';
-    currentAudio = null;
+    curAudio = null;
   };
 }
 
-function contactWhatsapp(pkg) {
+function cw(pkg) {
   window.open('https://wa.me/996554077907?text=' + encodeURIComponent('السلام عليكم إبراهيم، أرغب في الاستفسار عن ' + pkg), '_blank');
 }
 </script>
